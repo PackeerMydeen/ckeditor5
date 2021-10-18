@@ -31,6 +31,11 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+ 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -58,8 +63,13 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	TableProperties,
+	TableCellProperties,
+	HorizontalLine,
+	Highlight
 ];
+
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
@@ -81,7 +91,9 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'horizontalLine',
+			'highlight'
 		]
 	},
 	image: {
@@ -98,7 +110,10 @@ ClassicEditor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells'
+			'mergeTableCells',
+			'tableProperties', 
+			'tableCellProperties'
+	 
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
